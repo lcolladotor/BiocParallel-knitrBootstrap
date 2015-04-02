@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BiocParallel and knitrBoostrap intro</title>
+  <title>BiocParallel and knitrBootstrap intro</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -25,7 +25,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'BiocParallel and knitrBoostrap intro',
+                title: 'BiocParallel and knitrBootstrap intro',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -194,7 +194,7 @@ lines(y = 10 / (1:10) * c(1, 1.05^(2:10) ), 1:10, col = &#39;red&#39;,
 <pre class = 'prettyprint lang-r'>system.time( lapply(1:100, birthday) )</pre>
 
 <pre >##    user  system elapsed 
-##  23.898   0.300  24.220</pre>
+##  24.119   0.251  24.388</pre>
 
 <p><a href='http://www.slideshare.net/RevolutionAnalytics/introducing-revolution-r-open-enhanced-open-source-r-distribution-from-revolution-analytics' title=''>Source</a> slide 24</p>
 
@@ -213,7 +213,7 @@ lines(y = 10 / (1:10) * c(1, 1.05^(2:10) ), 1:10, col = &#39;red&#39;,
 system.time( x &lt;- foreach(j = 1:100) %dopar% birthday(j) )</pre>
 
 <pre >##    user  system elapsed 
-##  16.137   0.176  17.223</pre>
+##  19.263   0.315  22.145</pre>
 
 <ul class = 'build'>
 <li>Have to change code</li>
@@ -226,7 +226,7 @@ system.time( x &lt;- foreach(j = 1:100) %dopar% birthday(j) )</pre>
 system.time( y &lt;- bplapply(1:100, birthday) )</pre>
 
 <pre >##    user  system elapsed 
-##   0.142   0.065  11.813</pre>
+##   0.238   0.075  12.789</pre>
 
 <ul class = 'build'>
 <li>Very easy: change lapply() to <code>bp</code>lapply()</li>
@@ -270,14 +270,14 @@ system.time( y.serial &lt;- bplapply(1:10, birthday,
     BPPARAM = SerialParam()) )</pre>
 
 <pre >##    user  system elapsed 
-##   2.022   0.015   2.031</pre>
+##   2.103   0.017   2.124</pre>
 
 <pre class = 'prettyprint lang-r'>## Try Snow
 system.time( y.snow &lt;- bplapply(1:10, birthday, 
     BPPARAM = SnowParam(workers = 2)) )</pre>
 
 <pre >##    user  system elapsed 
-##   0.033   0.025   2.455</pre>
+##   0.026   0.019   1.738</pre>
 
 </article></slide><slide class=''><hgroup><h2>Use in JHPCE</h2></hgroup><article  id="use-in-jhpce" class="smaller">
 
@@ -553,11 +553,11 @@ knit(&#39;index.Rmd&#39;, tangle = TRUE)</pre>
 
 <p>Date this tutorial was generated.</p>
 
-<pre >## [1] &quot;2015-04-02 01:20:39 EDT&quot;</pre>
+<pre >## [1] &quot;2015-04-02 01:31:11 EDT&quot;</pre>
 
 <p>Wallclock time spent running this tutorial.</p>
 
-<pre >## Time difference of 1.001 mins</pre>
+<pre >## Time difference of 1.095 mins</pre>
 
 </article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section-13" class="smaller">
 
